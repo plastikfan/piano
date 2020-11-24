@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* root means the variables contained here are visible accross all element on page */
+:root {
+  --footer-height: 60px;
+  --logo-height: 8rem;
+}
+
+/*
+  see:
+    https://www.w3schools.com/cssref/sel_before.asp
+    https://css-tricks.com/almanac/selectors/a/after-and-before/
+
+  This is not explained well in the book, see css-tricks link for a better explanation.
+*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+

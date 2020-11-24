@@ -1,5 +1,16 @@
 .App {
-  text-align: center;
+  min-height: 100vh;
+  /* text-align: center; */
+}
+
+/* pg202 App-Content */
+.App-Content {
+  --offset: calc(var(--footer-height) + var(--logo-height));
+  min-height: calc(100vh - var(--offset));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
