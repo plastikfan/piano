@@ -1,20 +1,37 @@
 
-import React, { FunctionComponent } from "react"
+import React, { FunctionComponent, ReactEventHandler } from "react"
 import clsx from "clsx"
 
 import { NoteType } from "../../domain/note"
+import { usePressObserver } from "../PressObserver/usePressObserver"
 
 interface KeyProps {
   type: NoteType
   label: string
   disabled?: boolean
+  onUp: ReactEventHandler<HTMLButtonElement>
+  onDown: ReactEventHandler<HTMLButtonElement>
 }
 
-export const Key: FunctionComponent<KeyProps> = (props) => {
-  const { type, label, ...rest } = props
+export const Key: FunctionComponent<KeyProps> = ({
+  type,
+  label,
+  onDown,
+  onUp,
+  ...rest
+}) => {
+  // pg233 (step-5)
+  //
+  const pressed = usePressObserver({
+    watchKey: label,
+    onStartPress: onDown,
+    onFinishPress: onUp
+  })
   return (
     <button
-      className={clsx(`key key--${type}`)}
+      className={clsx(`key key--${type}`, pressed && "is-pressed")}
+      onMouseDown={onDown}
+      onMouseUp={onUp}
       type="button"
       {...rest}
     >
@@ -22,6 +39,27 @@ export const Key: FunctionComponent<KeyProps> = (props) => {
     </button>
   )
 }
+
+// pg233
+//
+// const pressed = usePressObserver({
+//   watchKey: label,
+//   onStartPress: onDown,
+//   onFinishPress: onUp
+// })
+
+// return(
+//   <button
+//     className={clsx(`key key--${type}`, pressed && "is-pressed")}
+//     onMouseDown={onDown}
+//     onMouseUp={onUp}
+//     type="button"
+//     {...rest}
+//   >
+//     {label}
+//   </button>
+// )
+
 
 // pg219
 // alternative definition of Key function component

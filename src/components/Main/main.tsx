@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from "react"
-import { Keyboard } from "../Keyboard"
-import { NoAudioMessage } from "../NoAudioMessage"
-import { useAudioContext } from "../AudioContextProvider"
+import { KeyboardWithInstrument } from "../Keyboard/WithInstrument"
+import { NoAudioMessage } from "../NoAudioMessage/NoAudioMessage"
+import { useAudioContext } from "../AudioContextProvider/useAudioContext"
 
 export const Main: FunctionComponent = () => {
   const AudioContext = useAudioContext()
   // The double bang op ensures the value it applies to is a boolean
   //
-  return !!AudioContext ? <Keyboard /> : <NoAudioMessage />
+  return !!AudioContext ? <KeyboardWithInstrument /> : <NoAudioMessage />
 }
