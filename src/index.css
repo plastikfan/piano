@@ -31,3 +31,25 @@ code {
   box-sizing: border-box;
 }
 
+/*
+  - css selectors with a preceding . eg .something selects items with class set to 'something'
+  - css selects without a preceding . eg body and code above applies the style to elements with
+  that name.
+*/
+
+/* This button style makes a button look like a text item */
+button {
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  background: none;
+  appearance: none;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  cursor: pointer;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+}
