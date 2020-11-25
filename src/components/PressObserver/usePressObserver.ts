@@ -1,7 +1,7 @@
 
-// pg231
-
 import { useEffect, useState } from "react"
+import { Key as KeyLabel } from "../../domain/keyboard"
+// pg231
 
 //
 type IsPressed = boolean
@@ -11,6 +11,18 @@ interface Settings {
   watchKey: KeyLabel
   onStartPress: Function
   onFinishPress: Function
+}
+
+function fromEventCode(code: EventCode): KeyLabel {
+  const prefixRegex = /Key|Digit/gi
+  return code.replace(prefixRegex, "")
+}
+
+function equal(watchedKey: KeyLabel, eventCode: EventCode): boolean {
+  return (
+    fromEventCode(eventCode).toUpperCase() ===
+    watchedKey.toUpperCase()
+  )
 }
 
 export function usePressObserver({
@@ -41,4 +53,6 @@ export function usePressObserver({
       document.removeEventListener("keyup", handlePressFinish)
     }
   }, [watchKey, pressed, setPressed, onStartPress, onFinishPress])
+
+  return pressed 
 }
