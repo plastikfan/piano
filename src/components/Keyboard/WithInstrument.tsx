@@ -9,7 +9,7 @@ import "./style.css"
 
 // pg239: useInstrument
 //
-import { useInstrument } from "../../state/Instrument/Context"
+import { useInstrument } from "../../state/Instrument"
 
 // This file new with pg229 (step-4)
 //

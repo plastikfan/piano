@@ -5,6 +5,10 @@ import clsx from "clsx"
 import { NoteType } from "../../domain/note"
 import { usePressObserver } from "../PressObserver/usePressObserver"
 
+// THIS WAS THE MISSING IMPORT THAT CAUSED THE KEYS NOT TO RENDER PROPERLY
+//
+import "./style.css"
+
 interface KeyProps {
   type: NoteType
   label: string

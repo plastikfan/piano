@@ -1,7 +1,7 @@
 import React from "react"
-import { Footer } from "./components/Footer/Footer"
-import { Logo } from "./components/Logo/Logo"
-import { Main } from "./components/Main/main"
+import { Footer } from "./components/Footer"
+import { Logo } from "./components/Logo"
+import { Main } from "./components/Main"
 import "./App.css"
 
 const App = () => {

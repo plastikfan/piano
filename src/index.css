@@ -1,3 +1,9 @@
+/* root means the variables contained here are visible accross all element on page */
+:root {
+  --footer-height: 60px;
+  --logo-height: 8rem;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,12 +16,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-/* root means the variables contained here are visible accross all element on page */
-:root {
-  --footer-height: 60px;
-  --logo-height: 8rem;
 }
 
 /*

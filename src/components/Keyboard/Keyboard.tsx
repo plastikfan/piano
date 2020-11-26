@@ -1,12 +1,11 @@
 import React, { FunctionComponent } from "react"
 import { selectKey } from "../../domain/keyboard"
-import { notes } from "../../domain/note"
+
+// pg228 (step-4): MidiValue
+//
+import { notes, MidiValue } from "../../domain/note"
 import { Key } from "../Key/Key"
 import "./style.css"
-
-// pg228 (step-4)
-//
-import { MidiValue } from '../../domain/note'
 
 // pg228 (step-4)
 //
